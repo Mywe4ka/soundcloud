@@ -1,0 +1,8 @@
+/public/assets
+/public/cache
+/.sass-cache
+/tmp
+/log/*.log
+/config/database.yml
+.DS_Store
+/db/sphinx
