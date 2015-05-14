@@ -6,3 +6,5 @@
 /config/database.yml
 .DS_Store
 /db/sphinx
+/db/test.sqlite3
+/Gemfile.lock
