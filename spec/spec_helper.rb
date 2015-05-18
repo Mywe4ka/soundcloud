@@ -2,7 +2,6 @@
 ENV["RAILS_ENV"] ||= 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
-require 'rspec/autorun'
 require 'pry'
 
 
@@ -35,6 +34,8 @@ RSpec.configure do |config|
   config.infer_base_class_for_anonymous_controllers = false
 
   config.order = :random
+
+  config.infer_spec_type_from_file_location!
 
   # Seed global randomization in this process using the `--seed` CLI option.
   # Setting this allows you to use `--seed` to deterministically reproduce

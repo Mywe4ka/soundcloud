@@ -5,7 +5,7 @@ gem 'omniauth-facebook'
 gem 'sqlite3'
 
 group :development, :test do
-  gem 'rspec-rails', '2.11.0'
+  gem 'rspec-rails'
   gem 'factory_girl_rails', '4.1.0'
   gem 'pry'
 end
@@ -14,10 +14,6 @@ group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
-end
-
-group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
 end
 
 gem 'jquery-rails'
