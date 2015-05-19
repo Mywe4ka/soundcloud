@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
 private
 
-  def set_user
+  def find_user
     @user = User.find(params[:id])
   end
 end

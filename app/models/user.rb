@@ -3,11 +3,11 @@ class User < ActiveRecord::Base
                   :oauth_expires_at, :city, :country, :description, :photo
 
   has_attached_file :photo,
-  styles: {
-    thumb: '150x150>',
-    medium: '300x300>'
-  },
-  default_url: "user_default.png"
+                    styles: {
+                    thumb: '150x150>',
+                    medium: '300x300>'
+                    },
+                    default_url: "user_default.png"
 
   validates_attachment_content_type :photo,
     content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
