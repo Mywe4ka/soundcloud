@@ -6,8 +6,7 @@ class User < ActiveRecord::Base
                     styles: {
                     thumb: '150x150>',
                     medium: '300x300>'
-                    },
-                    default_url: "user_default.png"
+                    }
 
   validates_attachment_content_type :photo,
     content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
@@ -21,9 +20,17 @@ class User < ActiveRecord::Base
       user.last_name = auth.info.last_name
       user.oauth_token = auth.credentials.token
       user.oauth_expires_at = Time.at(auth.credentials.expires_at)
-      #user.photo = auth.info.image
+      user.photo = process_uri(auth.info.image)
       user.save!
     end
   end
 
+private
+
+  def self.process_uri(uri)
+    return if uri.blank?
+    avatar_url = URI.parse(uri)
+    avatar_url.scheme = 'https'
+    avatar_url.to_s
+  end
 end
