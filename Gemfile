@@ -4,6 +4,7 @@ gem 'rails', '3.2.21'
 gem 'omniauth-facebook'
 gem 'sqlite3'
 gem 'paperclip'
+gem 'haml'
 
 group :development, :test do
   gem 'rspec-rails'
