@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :song do
-    tittle "MyString"
+    title "MyString"
     artist "MyString"
-    year "2015-05-20 17:53:18"
+    year Time.now
   end
 end
