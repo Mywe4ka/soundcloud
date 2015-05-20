@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   attr_accessible :provider, :uid, :name, :first_name, :last_name, :oauth_token,
                   :oauth_expires_at, :city, :country, :description, :photo
 
+  has_and_belongs_to_many :songs
+
   has_attached_file :photo,
                     styles: {
                     thumb: '150x150>',
