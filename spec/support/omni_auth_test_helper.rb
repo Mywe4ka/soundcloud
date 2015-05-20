@@ -7,6 +7,7 @@ module OmniAuthTestHelper
         uid: '123545',
         info: {
           name: "Gaius",
+          image: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQyFNuZCIo93QfYTB9fXBUENqxKn0xrWlu60PZAZXdlncQkwHcSnxMYVds"
         },
         credentials: {
           token: "123456",
