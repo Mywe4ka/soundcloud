@@ -12,6 +12,10 @@ group :development, :test do
   gem 'pry'
 end
 
+group :test do
+  gem 'shoulda-matchers', require: false
+end
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'

@@ -6,6 +6,8 @@ describe UsersController do
       @user = FactoryGirl.create(:user)
   end
 
+  it { should use_before_filter(:find_user) }
+
   describe 'GET #show' do
 
     it 'assigns requested speaker to @user' do
