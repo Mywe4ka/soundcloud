@@ -2,12 +2,11 @@ require 'spec_helper'
 
 describe User do
 
-  before do
-    @user = FactoryGirl.create(:user)
-  end
+  let(:user) { FactoryGirl.create(:user) }
 
-  subject { @user }
+  subject { user }
 
+  it { should be_valid }
   it { should respond_to(:name) }
   it { should respond_to(:first_name) }
   it { should respond_to(:last_name) }
@@ -19,12 +18,7 @@ describe User do
   it { should respond_to(:oauth_token) }
   it { should respond_to(:oauth_expires_at) }
   it { should respond_to(:photo) }
-
-  it { should have_and_belong_to_many(:songs) }
-
-  it 'has valid factory' do
-    expect(FactoryGirl.create(:user)).to be_valid
-  end
+  it { should have_many(:songs) }
 
   it 'name return users full name' do
     user = FactoryGirl.build(:user)

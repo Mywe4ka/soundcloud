@@ -2,19 +2,14 @@ require 'rails_helper'
 
 describe Song do
 
-  before do
-    @song = FactoryGirl.create(:song)
-  end
+  let(:song) { FactoryGirl.create(:song) }
 
-  subject { @song }
+  subject { song }
 
+  it { should be_valid }
   it { should respond_to(:title) }
   it { should respond_to(:artist) }
   it { should respond_to(:year) }
+  it { should belong_to(:user) }
 
-  it { should have_and_belong_to_many(:users) }
-
-  it 'has valid factory' do
-    expect(FactoryGirl.create(:song)).to be_valid
-  end
 end

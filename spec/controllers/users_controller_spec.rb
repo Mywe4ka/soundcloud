@@ -7,7 +7,6 @@ describe UsersController do
   end
 
   it { should use_before_filter(:find_user) }
-  it { should_not use_before_filter(:set_user) }
 
   describe 'GET #show' do
 
