@@ -1,5 +1,24 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
+---
 en:
-  hello: "Hello world"
+  layouts:
+    sign_in: "Signed in as "
+    sign_out: "Sign out"
+  views:
+    users:
+      following: "Following"
+      followers: "Followers"
+      edit_profile: "Edit profile"
+      follow: "Follow"
+      unfollow: "Unfollow"
+      view_profile: "View profile"
+    songs:
+      upload_new_MP3: "Upload new MP3"
+      list: "Songs' list"
+      upload: "Upload"
+      title: "Title"
+      artist: "Artist"
+      year: "Year"
+      genre: "Genre"
+      album: "Album"
+      track_nr: "Track number"
+

@@ -1,0 +1,5 @@
+%h2= I18n.t "views.songs.list"
+%table
+  - @songs.each do |song|
+    %tr
+      %td= song.title

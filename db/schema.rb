@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20150526152516) do
   add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
   add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
+
   create_table "songs", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"

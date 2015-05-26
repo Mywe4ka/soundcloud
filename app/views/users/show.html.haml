@@ -5,11 +5,19 @@
 %br/
 = @user.name
 %br/
-%br/
+
 - if signed_in?
+  %br/
   = render 'follow_form'
   %br/
   = render 'users/stats'
 %br/
 
-= link_to 'Edit', edit_user_path(@user) if current_user == @user.id
+- if current_user.id == @user.id
+  = link_to I18n.t 'views.users.edit_profile', edit_user_path(@user)
+  %br/
+  %br/
+  = render 'songs/upload'
+
+
+

@@ -1,0 +1,23 @@
+---
+ua:
+  layouts:
+    sign_in: "Привіт, "
+    sign_out: "Вийти"
+  views:
+    users:
+      following: "Підписки"
+      followers: "Підписники"
+      edit_profile: "Редагувати профіль"
+      follow: "Підписатися"
+      unfollow: "Відписатися"
+      view_profile: "Переглянути профіль"
+    songs:
+      upload_new_MP3: "Завантажити нову пісню"
+      list: "Список пісень"
+      upload: "Завантажити"
+      title: "Назва"
+      artist: "Виконавець"
+      year: "Рік"
+      genre: "Жанр"
+      album: "Альбом"
+      track_nr: "Номер пісні"

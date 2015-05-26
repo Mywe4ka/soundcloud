@@ -1,2 +1,2 @@
 = form_for(current_user.relationships.where(followed_id: @user).first, html: { method: :delete }, remote: true) do |f|
-  = f.submit "Unfollow"
+  = f.submit I18n.t 'views.users.unfollow'

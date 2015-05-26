@@ -4,6 +4,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'rspec/its'
 require 'shoulda/matchers'
+require 'paperclip/matchers'
 require 'pry'
 
 
@@ -19,6 +20,7 @@ RSpec.configure do |config|
   # config.mock_with :mocha
   # config.mock_with :flexmock
   # config.mock_with :rr
+  config.include Paperclip::Shoulda::Matchers
 
   config.include OmniAuthTestHelper
 
