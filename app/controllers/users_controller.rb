@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_filter :find_user
+
+  before_filter :find_user, only: [:show, :edit, :update]
 
   def show
   end
@@ -17,6 +18,20 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def following
+    @title = "Following"
+    @user = User.find(params[:id])
+    @users = @user.followed_users
+    render 'show_follow'
+  end
+
+  def followers
+    @title = "Followers"
+    @user = User.find(params[:id])
+    @users = @user.followers
+    render 'show_follow'
   end
 
 private

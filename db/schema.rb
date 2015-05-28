@@ -11,15 +11,33 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150520145318) do
+ActiveRecord::Schema.define(:version => 20150526152516) do
+
+  create_table "relationships", :force => true do |t|
+    t.integer  "follower_id"
+    t.integer  "followed_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "relationships", ["followed_id"], :name => "index_relationships_on_followed_id"
+  add_index "relationships", ["follower_id", "followed_id"], :name => "index_relationships_on_follower_id_and_followed_id", :unique => true
+  add_index "relationships", ["follower_id"], :name => "index_relationships_on_follower_id"
 
   create_table "songs", :force => true do |t|
     t.integer  "user_id"
     t.string   "title"
     t.string   "artist"
     t.datetime "year"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "mfile_file_name"
+    t.string   "mfile_content_type"
+    t.integer  "mfile_file_size"
+    t.datetime "mfile_updated_at"
+    t.string   "album"
+    t.integer  "track_nr"
+    t.string   "genre"
   end
 
   create_table "users", :force => true do |t|
