@@ -14,6 +14,7 @@ end
 
 group :test do
   gem 'shoulda-matchers', require: false
+  gem 'rspec-its'
 end
 
 group :assets do
