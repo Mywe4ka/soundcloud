@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   before_filter :find_user
 
   def show
@@ -17,6 +18,14 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+
+  def following
+    @users = @user.followed_users
+  end
+
+  def followers
+    @users = @user.followers
   end
 
 private

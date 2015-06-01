@@ -6,4 +6,10 @@
 = @user.name
 %br/
 %br/
-= link_to 'Edit', edit_user_path(@user)
+- if signed_in?
+  = render 'follow_form'
+  %br/
+  = render 'users/stats'
+%br/
+
+= link_to 'Edit', edit_user_path(@user) if current_user == @user.id
