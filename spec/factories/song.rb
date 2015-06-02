@@ -5,9 +5,10 @@ FactoryGirl.define do
     title "MyString"
     artist "MyString"
     year Time.now
-    mfile { File.new("#{Rails.root}/public/system/songs/mfiles/000/000/004/original/Death_Grips_-_I've_Seen_Footage.mp3") }
+    mfile File.new(Rails.root + 'spec/factories/songs/Death_Grips.mp3')
     album "Hello"
     track_nr 1
     genre "Rock"
+    user { FactoryGirl.create(:user) }
   end
 end

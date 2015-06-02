@@ -23,6 +23,6 @@ describe Song do
                 allowing("audio/mpeg", "audio/mp3").
                 rejecting('text/plain', 'text/xml') }
   it { should validate_attachment_size(:mfile).
-                less_than(10.megabytes) }
+                less_than(15.megabytes) }
 
 end

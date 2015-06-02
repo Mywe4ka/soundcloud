@@ -1,9 +1,9 @@
 ---
 en:
-  layouts:
-    sign_in: "Signed in as "
-    sign_out: "Sign out"
   views:
+    layouts:
+      sign_in: "Signed in as "
+      sign_out: "Sign out"
     users:
       following: "Following"
       followers: "Followers"
@@ -11,6 +11,13 @@ en:
       follow: "Follow"
       unfollow: "Unfollow"
       view_profile: "View profile"
+      name: "Name"
+      first_name: "First name"
+      last_name: "Last name"
+      city: "City"
+      country: "Country"
+      description: "Description"
+      update: "Update"
     songs:
       upload_new_MP3: "Upload new MP3"
       list: "Songs' list"
@@ -21,4 +28,13 @@ en:
       genre: "Genre"
       album: "Album"
       track_nr: "Track number"
+      confirm: "Are you sure?"
+  controllers:
+    songs:
+      uploaded: "You have successfully uploaded song!"
+      not_uploaded: "File can't be uploaded"
+      destroyed: "You have successfully destroyed song!"
+      not_destroyed: "You can't destroy song!"
+
+
 

@@ -10,11 +10,11 @@
   %br/
   = render 'follow_form'
   %br/
-  = render 'users/stats'
+  = render 'stats'
 %br/
 
 - if current_user.id == @user.id
-  = link_to I18n.t 'views.users.edit_profile', edit_user_path(@user)
+  = link_to I18n.t('views.users.edit_profile'), edit_user_path(@user)
   %br/
   %br/
   = render 'songs/upload'

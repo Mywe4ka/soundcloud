@@ -1,5 +1,13 @@
 %h2= I18n.t "views.songs.list"
 %table
+%thead
+  %tr
+    %th Title
+    %th Artist
+%tbody
   - @songs.each do |song|
     %tr
       %td= song.title
+      %td= song.artist
+      %td= link_to 'Delete', song_path(song), method: :delete, data: { confirm: I18n.t 'views.songs.confirm' }
+      %br/

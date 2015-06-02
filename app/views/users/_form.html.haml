@@ -4,28 +4,28 @@
   = f.file_field :photo
   %br/
   %br/
-  = f.label :name
+  = f.label I18n.t 'views.users.name'
   %br/
   = f.text_field :name
   %br/
-  = f.label :first_name
+  = f.label I18n.t 'views.users.first_name'
   %br/
   = f.text_field :first_name
   %br/
-  = f.label :last_name
+  = f.label I18n.t 'views.users.last_name'
   %br/
   = f.text_field :last_name
   %br/
-  = f.label :city
+  = f.label I18n.t 'views.users.city'
   %br/
   = f.text_field :city
   %br/
-  = f.label :country
+  = f.label I18n.t 'views.users.country'
   %br/
   = f.text_field :country
   %br/
-  = f.label :desciption
+  = f.label I18n.t 'views.users.description'
   %br/
   = f.text_area :description
   %br/
-  = f.submit
+  = f.submit I18n.t 'views.users.update'
