@@ -6,6 +6,12 @@ Sound::Application.routes.draw do
     end
   end
 
+  resources :songs do
+    collection do
+      post 'upload'
+    end
+  end
+
   resources :relationships, only: [:create, :destroy]
 
   match 'auth/:provider/callback', to: 'sessions#create'

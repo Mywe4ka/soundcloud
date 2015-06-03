@@ -1,0 +1,37 @@
+---
+ua:
+  layouts:
+    sign_in: "Привіт, "
+    sign_out: "Вийти"
+  views:
+    users:
+      following: "Підписки"
+      followers: "Підписники"
+      edit_profile: "Редагувати профіль"
+      follow: "Підписатися"
+      unfollow: "Відписатися"
+      view_profile: "Переглянути профіль"
+      name: "Повне ім'я"
+      first_name: "Ім'я"
+      last_name: "Прізвище"
+      city: "Місто"
+      country: "Країна"
+      description: "Опис"
+      update: "Оновити"
+    songs:
+      upload_new_MP3: "Завантажити нову пісню"
+      list: "Список пісень"
+      upload: "Завантажити"
+      title: "Назва"
+      artist: "Виконавець"
+      year: "Рік"
+      genre: "Жанр"
+      album: "Альбом"
+      track_nr: "Номер пісні"
+      confirm: "Ви впевнені?"
+  controllers:
+    songs:
+      uploaded: "Ви успішно завантажили файл!"
+      not_uploaded: "Файл не може бути завантажений!"
+      destroyed: "Ви успішно видалили файл!"
+      not_destroyed: "Файл не може бути видалений!"

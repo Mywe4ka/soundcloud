@@ -1,5 +1,5 @@
 %section
   %h1= @user.name
-  %span= link_to "view profile", @user
+  %span= link_to I18n.t 'views.users.view_profile', @user
 %section
   = render 'users/stats'
