@@ -4,6 +4,8 @@ ua:
     sign_in: "Привіт, "
     sign_out: "Вийти"
   views:
+    home:
+      welcome: "Вітаємо на Soundcloud"
     users:
       following: "Підписки"
       followers: "Підписники"

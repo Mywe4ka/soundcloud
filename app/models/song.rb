@@ -18,7 +18,7 @@ class Song < ActiveRecord::Base
 
   def set_song_attr_from_id3tag
     song = ID3Tag.read(File.open("#{Rails.root}/public" + self.mfile.url))
-    self.attributes.each do |attr|
+    self.attributes.each_key do |attr|
       next unless song.respond_to? attr
       self[attr] ||= song.send(attr.to_sym)
     end
