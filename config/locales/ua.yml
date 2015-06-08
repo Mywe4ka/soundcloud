@@ -1,9 +1,9 @@
 ---
 ua:
-  layouts:
-    sign_in: "Привіт, "
-    sign_out: "Вийти"
   views:
+    layouts:
+      sign_in: "Привіт, "
+      sign_out: "Вийти"
     home:
       welcome: "Вітаємо на Soundcloud"
     users:
@@ -30,10 +30,32 @@ ua:
       genre: "Жанр"
       album: "Альбом"
       track_nr: "Номер пісні"
-      confirm: "Ви впевнені?"
+    playlists:
+      name: "Назва"
+      desciption: "Опис"
+      create: "Створити"
+      lists: "Всі плейлісти"
+      new: "Новий плейлист"
+      edit: "Редагувати плейлист"
+      submit: "Застосувати"
   controllers:
+    users:
+      updated: "Ви успішно оновили інформацію!"
+      not_updated: "Інформацію не обновлено!"
     songs:
       uploaded: "Ви успішно завантажили файл!"
       not_uploaded: "Файл не може бути завантажений!"
       destroyed: "Ви успішно видалили файл!"
       not_destroyed: "Файл не може бути видалений!"
+    playlists:
+      created: "Ви успішно створили плейлист!"
+      not_created: "Плейлист не був створений!"
+      updated: "Ви успішно обновили плейлист!"
+      not_updated: "Плейлист не обновлено!"
+      destroyed: "Ви успішно знищили плейлист!"
+      not_destroyed: "Плейлист не може бути видалений!"
+  global:
+    are_sure: "Ви впевнені?"
+    delete: "Видалити"
+    edit: "Редагувати"
+    show: "Переглянути"

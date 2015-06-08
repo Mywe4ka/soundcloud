@@ -9,14 +9,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        format.html { redirect_to user_path }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+    if @user.update_attributes(params[:user])
+      flash[:notice] = I18n.t 'controllers.users.updated'
+      redirect_to user_path
+    else
+      flash[:alert] = I18n.t 'controllers.users.not_updated'
+      render :edit
     end
   end
 

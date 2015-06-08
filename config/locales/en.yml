@@ -30,13 +30,35 @@ en:
       genre: "Genre"
       album: "Album"
       track_nr: "Track number"
-      confirm: "Are you sure?"
+    playlists:
+      name: "Name"
+      desciption: "Description"
+      create: "Create"
+      lists: "All playlists"
+      new: "New playlist"
+      edit: "Edit playlist"
+      submit: "Submit"
   controllers:
+    users:
+      updated: "You have successfully updated information!"
+      not_updated: "Information wasn't updated!"
     songs:
       uploaded: "You have successfully uploaded song!"
-      not_uploaded: "File can't be uploaded"
+      not_uploaded: "File can't be uploaded!"
       destroyed: "You have successfully destroyed song!"
       not_destroyed: "You can't destroy song!"
+    playlists:
+      created: "You have successfully created playlist!"
+      not_created: "Playlist wasn't created!"
+      updated: "You have successfully updated playlist!"
+      not_updated: "Playlist wasn't updated!"
+      destroyed: "You have successfully destroyed playlist!"
+      not_destroyed: "You can't destroy playlist!"
+  global:
+    are_sure: "Are you sure?"
+    delete: "Delete"
+    edit: "Edit"
+    show: "Show"
 
 
 

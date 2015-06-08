@@ -1,5 +1,4 @@
-%h2
-  = I18n.t "views.songs.list"
+%h2= I18n.t "views.songs.list"
 %table
   %thead
     %th Title
@@ -11,7 +10,7 @@
       %tr
         %td= song.title
         %td= song.artist
-        %td= link_to 'Delete', song_path(song), method: :delete, data: { confirm: I18n.t('views.songs.confirm') }
+        %td= link_to I18n.t 'global.delete', song_path(song), method: :delete, data: { confirm: I18n.t('global.are_sure') }
         %td
           .audio-player
             %h2= song.title

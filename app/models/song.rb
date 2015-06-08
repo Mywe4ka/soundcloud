@@ -6,6 +6,7 @@ class Song < ActiveRecord::Base
   attr_accessible :artist, :title, :year, :mfile, :album, :track_nr, :genre, :user_id
 
   belongs_to :user
+  has_and_belongs_to_many :playlists
 
   has_attached_file :mfile
 
