@@ -4,6 +4,8 @@ en:
     layouts:
       sign_in: "Signed in as "
       sign_out: "Sign out"
+    home:
+      welcome: "Welcome to Soundcloud"
     users:
       following: "Following"
       followers: "Followers"

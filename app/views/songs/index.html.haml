@@ -1,13 +1,18 @@
-%h2= I18n.t "views.songs.list"
+%h2
+  = I18n.t "views.songs.list"
 %table
-%thead
-  %tr
+  %thead
     %th Title
     %th Artist
-%tbody
-  - @songs.each do |song|
-    %tr
-      %td= song.title
-      %td= song.artist
-      %td= link_to 'Delete', song_path(song), method: :delete, data: { confirm: I18n.t 'views.songs.confirm' }
-      %br/
+    %th Delete
+    %th Play
+  %tbody
+    - @songs.each do |song|
+      %tr
+        %td= song.title
+        %td= song.artist
+        %td= link_to 'Delete', song_path(song), method: :delete, data: { confirm: I18n.t('views.songs.confirm') }
+        %td
+          .audio-player
+            %h2= song.title
+            %audio#audio-player{:controls => "controls", :src => asset_path("#{song.mfile.url}"), :type => "audio/mpeg"}
