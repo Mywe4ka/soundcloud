@@ -33,7 +33,7 @@ class SongsController < ApplicationController
       @song.destroy
       flash[:notice] = I18n.t 'controllers.songs.destroyed'
     else
-      flash[:notice] = I18n.t 'controllers.songs.not_destroyed'
+      flash[:alert] = I18n.t 'controllers.songs.not_destroyed'
     end
     redirect_to(:controller => 'songs', :action => 'index')
   end

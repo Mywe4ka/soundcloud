@@ -1,0 +1,14 @@
+%h2= I18n.t "views.playlists.lists"
+%table
+  %thead
+    %th Name
+    %th Show
+    %th Edit
+    %th Delete
+  %tbody
+    - @playlists.each do |playlist|
+      %tr
+        %td= playlist.name
+        %td= link_to I18n.t('global.show'), user_playlist_path(playlist.user, playlist)
+        %td= link_to I18n.t('global.edit'), edit_user_playlist_path(playlist.user, playlist)
+        %td= link_to I18n.t('global.delete'), user_playlist_path(playlist.user, playlist), method: :delete, data: { confirm: I18n.t('global.are_sure') }

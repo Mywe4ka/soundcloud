@@ -13,7 +13,7 @@
   = render 'stats'
 %br/
 
-- if current_user.id == @user.id
+- if @user == current_user
   = link_to I18n.t('views.users.edit_profile'), edit_user_path(@user)
   %br/
   %br/
