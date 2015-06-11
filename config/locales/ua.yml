@@ -2,8 +2,9 @@
 ua:
   views:
     layouts:
-      sign_in: "Привіт, "
+      signed_in: "Привіт, "
       sign_out: "Вийти"
+      sign_in: "Увійдіть за допомогою Facebook"
     home:
       welcome: "Вітаємо на Soundcloud"
     users:

@@ -1,9 +1,14 @@
 Sound::Application.routes.draw do
 
   resources :users do
-    resources :playlists
     member do
       get :following, :followers
+    end
+  end
+
+  resources :playlists do
+    collection do
+      get 'add_song'
     end
   end
 

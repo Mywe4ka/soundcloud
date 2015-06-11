@@ -14,10 +14,10 @@
   </div>
   <div id="user_nav">
     <% if current_user %>
-      <%= I18n.t "views.layouts.sign_in" %><strong><%= link_to current_user.name, current_user %></strong>!
-      <%= link_to I18n.t "views.layouts.sign_out", signout_path, id: "sign_out" %>
+      <%= I18n.t("views.layouts.signed_in") %><strong><%= link_to current_user.name, current_user %></strong>!
+      <%= link_to I18n.t("views.layouts.sign_out"), signout_path, id: "sign_out" %>
     <% else %>
-      <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+      <%= link_to I18n.t("views.layouts.sign_in") , "/auth/facebook", id: "sign_in" %>
     <% end %>
   </div>
   <%= yield %>
