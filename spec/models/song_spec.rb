@@ -16,6 +16,7 @@ describe Song do
   it { should respond_to(:mfile) }
 
   it { should belong_to(:user) }
+  it { should have_and_belong_to_many(:playlists) }
 
   it { should have_attached_file(:mfile) }
   it { should validate_attachment_presence(:mfile) }

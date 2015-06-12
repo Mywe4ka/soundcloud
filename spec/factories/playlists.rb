@@ -2,6 +2,7 @@
 
 FactoryGirl.define do
   factory :playlist do
-    #todo
+    name "MyString"
+    description "MyString"
   end
 end

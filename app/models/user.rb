@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
                   :oauth_expires_at, :city, :country, :description, :photo
 
   has_many :songs
-  has_many :playlists
+  has_many :playlists, dependent: :destroy
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :followed_users, through: :relationships, source: :followed
   has_many :reverse_relationships, foreign_key: "followed_id",
