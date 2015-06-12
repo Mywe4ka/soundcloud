@@ -6,12 +6,12 @@
     %th Delete
     %th Play
   %tbody
-    - @songs.each do |song|
+    - @songs.each_with_index do |song, i|
       %tr
         %td= song.title
         %td= song.artist
         %td= link_to I18n.t 'global.delete', song_path(song), method: :delete, data: { confirm: I18n.t('global.are_sure') }
         %td
           .audio-player
-            %h2= song.title
             %audio#audio-player{:controls => "controls", :src => asset_path("#{song.mfile.url}"), :type => "audio/mpeg"}
+        %td= link_to "<button>Add</button>".html_safe, playlists_path(:song_id => song)

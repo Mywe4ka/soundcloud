@@ -27,6 +27,7 @@ describe User do
   it { should respond_to(:unfollow!) }
 
   it { should have_many(:songs) }
+  it { should have_many(:playlists) }
 
   it 'name return users full name' do
     user = FactoryGirl.build(:user)
