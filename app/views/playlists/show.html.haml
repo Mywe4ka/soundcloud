@@ -4,3 +4,17 @@
 %h3 Description
 = @playlist.description
 %br/
+%h3 List of songs
+%table
+  %thead
+    %th Name
+    %th To play
+  %tbody
+  - @playlist.songs.each do |song|
+    %tr
+      %td= song.title
+      %td
+        .audio-player
+          %audio#audio-player{:controls => "controls", :src => asset_path("#{song.mfile.url}"), :type => "audio/mpeg"}
+
+
