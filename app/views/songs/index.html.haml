@@ -1,18 +1,16 @@
 %h2= I18n.t "views.songs.list"
 %table
   %thead
-    %th Title
-    %th Artist
-    %th Delete
-    %th Play
+    %th= I18n.t "views.songs.title"
+    %th= I18n.t "views.songs.artist"
+    %th= I18n.t "global.delete"
+    %th= I18n.t "views.songs.play"
   %tbody
     - @songs.each_with_index do |song, i|
       %tr
         %td= song.title
         %td= song.artist
         %td= link_to I18n.t 'global.delete', song_path(song), method: :delete, data: { confirm: I18n.t('global.are_sure') }
-        %td
-          .audio-player
-            %audio#audio-player{:controls => "controls", :src => asset_path("#{song.mfile.url}"), :type => "audio/mpeg"}
+        %td= render 'shared/player', :song_for_player => song
         %td= link_to "<button>Add</button>".html_safe, playlists_path(:song_id => song)
         %td= link_to "<button>Discuss</button>".html_safe, comments_songs_path(:id => song)

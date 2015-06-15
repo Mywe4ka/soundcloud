@@ -1,22 +1,7 @@
-%h3 Name
+%h3= I18n.t "views.songs.title"
 = @song.title
-%h3 Artist
+%h3= I18n.t "views.songs.artist"
 = @song.artist
-.audio-player
-  %audio#audio-player{:controls => "controls", :src => asset_path("#{@song.mfile.url}"), :type => "audio/mpeg"}
-%tr#disqus
+= render 'shared/player', :song_for_player => @song
+#disqus
   #disqus_thread
-  :javascript
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = 'soundcloud2';
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function Disqus() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  %noscript
-    Please enable JavaScript to view the
-    %a{:href => "https://disqus.com/?ref_noscript", :rel => "nofollow"} comments powered by Disqus.
-%tr
