@@ -31,9 +31,10 @@ en:
       genre: "Genre"
       album: "Album"
       track_nr: "Track number"
+      play: "Play"
     playlists:
       name: "Name"
-      desciption: "Description"
+      description: "Description"
       create: "Create"
       lists: "All playlists"
       new: "New playlist"

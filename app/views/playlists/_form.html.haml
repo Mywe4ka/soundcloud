@@ -1,9 +1,9 @@
 = form_for @playlist do |f|
-  = f.label  "Name"
+  = f.label I18n.t "views.playlists.name"
   %br/
   = f.text_field :name
   %br/
-  = f.label "Description"
+  = f.label I18n.t "views.playlists.description"
   %br/
   = f.text_area :description
   %br/

@@ -15,6 +15,7 @@ Sound::Application.routes.draw do
   resources :songs do
     collection do
       post 'upload'
+      get 'comments'
     end
   end
 

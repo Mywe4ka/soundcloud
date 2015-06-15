@@ -1,0 +1,7 @@
+%h3= I18n.t "views.songs.title"
+= @song.title
+%h3= I18n.t "views.songs.artist"
+= @song.artist
+= render 'shared/player', :song_for_player => @song
+#disqus
+  #disqus_thread

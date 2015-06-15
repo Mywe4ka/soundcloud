@@ -1,6 +1,18 @@
-%h3 Name
+%h3= I18n.t "views.playlists.name"
 = @playlist.name
 %br/
-%h3 Description
+%h3= I18n.t "views.playlists.description"
 = @playlist.description
 %br/
+%h3= I18n.t "views.songs.list"
+%table
+  %thead
+    %th= I18n.t "views.songs.title"
+    %th= I18n.t "views.songs.play"
+  %tbody
+  - @playlist.songs.each do |song|
+    %tr
+      %td= song.title
+      %td= render 'shared/player', :song_for_player => song
+
+

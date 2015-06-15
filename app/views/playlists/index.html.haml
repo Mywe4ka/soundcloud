@@ -1,10 +1,10 @@
 %h2= I18n.t "views.playlists.lists"
 %table
   %thead
-    %th Name
-    %th Show
-    %th Edit
-    %th Delete
+    %th= I18n.t "views.playlists.name"
+    %th= I18n.t "global.show"
+    %th= I18n.t "global.edit"
+    %th= I18n.t "global.delete"
   %tbody
     - @playlists.each do |playlist|
       - if current_user?(playlist.user)
