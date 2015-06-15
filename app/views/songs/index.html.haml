@@ -15,3 +15,4 @@
           .audio-player
             %audio#audio-player{:controls => "controls", :src => asset_path("#{song.mfile.url}"), :type => "audio/mpeg"}
         %td= link_to "<button>Add</button>".html_safe, playlists_path(:song_id => song)
+        %td= link_to "<button>Discuss</button>".html_safe, comments_songs_path(:id => song)

@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
 
-  before_filter :find_song, :only => [:edit, :update, :destroy]
+  before_filter :find_song, :only => [:edit, :update, :destroy, :comments]
 
   def index
     @songs = Song.all
@@ -36,6 +36,9 @@ class SongsController < ApplicationController
       flash[:alert] = I18n.t 'controllers.songs.not_destroyed'
     end
     redirect_to(:controller => 'songs', :action => 'index')
+  end
+
+  def comments
   end
 
   private
