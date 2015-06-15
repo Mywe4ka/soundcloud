@@ -4,7 +4,7 @@ class PlaylistsController < ApplicationController
   before_filter :find_song, :only => [:add_song]
 
   def index
-    @playlists = Playlist.all
+    @playlists = Playlist.paginate(page: params[:page])
     @song = params[:song_id]
   end
 

@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   before_filter :find_song, :only => [:edit, :update, :destroy, :comments]
 
   def index
-    @songs = Song.all
+    @songs = Song.paginate(page: params[:page])
   end
 
   def upload
