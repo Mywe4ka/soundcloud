@@ -4,6 +4,7 @@
 /.sass-cache
 /tmp
 /log/*.log
+/log/*.pid
 /config/database.yml
 .DS_Store
 /db/sphinx
