@@ -3,7 +3,7 @@ class SongsController < ApplicationController
   before_filter :find_song, :only => [:edit, :update, :destroy, :comments]
 
   def index
-    @songs = params[:search].blank? ? Song.all : Song.search(params[:search])
+    @songs = Song.search params[:search], :page => params[:page], :per_page => 30
   end
 
   def upload
