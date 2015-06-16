@@ -20,6 +20,7 @@
       <%= link_to I18n.t("views.layouts.sign_in") , "/auth/facebook", id: "sign_in" %>
     <% end %>
   </div>
+  <%= render 'shared/search', :path => songs_path %>
   <%= yield %>
 </body>
 </html>
