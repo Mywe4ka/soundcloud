@@ -2,12 +2,13 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.21'
 gem 'omniauth-facebook'
-gem 'sqlite3'
+gem 'mysql2'
 gem 'paperclip'
 gem 'haml'
 gem 'id3tag'
 gem 'rails-i18n'
 gem 'will_paginate', '3.0.3'
+gem 'thinking-sphinx'
 
 group :development, :test do
   gem 'rspec-rails'

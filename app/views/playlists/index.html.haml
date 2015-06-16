@@ -14,5 +14,5 @@
           %td= link_to I18n.t('global.show'), playlist_path(playlist)
           %td= link_to I18n.t('global.edit'), edit_playlist_path(playlist)
           %td= link_to I18n.t('global.delete'), playlist_path(playlist), method: :delete, data: { confirm: I18n.t('global.are_sure') }
-          %td= link_to "<button>Add</button>".html_safe, add_song_playlists_path(:id => playlist, :song_id => @song
+          %td= link_to "<button>Add</button>".html_safe, add_song_playlists_path(:id => playlist, :song_id => @song)
 = will_paginate
