@@ -2,6 +2,7 @@ FactoryGirl.define do
   factory :user do |t|
     t.provider "facebook"
     t.uid "123456"
+    t.email "nuts@i.ua"
     t.name "Terry Kerry"
     t.first_name "Terry"
     t.last_name "Kerry"

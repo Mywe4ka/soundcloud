@@ -3,12 +3,13 @@ source 'https://rubygems.org'
 gem 'rails', '3.2.21'
 gem 'omniauth-facebook'
 gem 'mysql2'
-gem 'paperclip'
+gem 'paperclip', '4.2.2'
 gem 'haml'
 gem 'id3tag'
 gem 'rails-i18n'
 gem 'will_paginate', '3.0.3'
 gem 'thinking-sphinx'
+gem 'resque', require: "resque/server"
 
 group :development, :test do
   gem 'rspec-rails'

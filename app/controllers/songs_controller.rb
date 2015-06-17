@@ -10,6 +10,10 @@ class SongsController < ApplicationController
     @song = Song.create(params[:song])
     @song.user_id = current_user.id
     if @song.save
+      binding.pry
+      current_user.followed_users.each do |follower|
+        UserMailer.notify_followers(follower, @song).deliver
+      end
       render :action => 'edit'
     else
       flash[:alert] = I18n.t 'controllers.songs.not_uploaded'
