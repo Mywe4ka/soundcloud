@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+  include MailSendingLogic
 
   before_filter :find_song, :only => [:edit, :update, :destroy, :comments]
 
@@ -10,10 +11,7 @@ class SongsController < ApplicationController
     @song = Song.create(params[:song])
     @song.user_id = current_user.id
     if @song.save
-      binding.pry
-      current_user.followed_users.each do |follower|
-        UserMailer.notify_followers(follower, @song).deliver
-      end
+      notify_follow(current_user, @song)
       render :action => 'edit'
     else
       flash[:alert] = I18n.t 'controllers.songs.not_uploaded'

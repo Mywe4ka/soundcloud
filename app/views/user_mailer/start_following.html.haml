@@ -1,0 +1,14 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+  %body
+    %h1
+      = "#{I18n.t('views.user_mailer.hi')}, #{@user.name}!"
+    %p
+      = I18n.t 'views.user_mailer.start_following'
+      %br/
+      = I18n.t 'views.user_mailer.newsletters'
+      %br/
+    %p
+      = I18n.t 'views.user_mailer.great_day'
