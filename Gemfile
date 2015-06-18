@@ -10,6 +10,7 @@ gem 'rails-i18n'
 gem 'will_paginate', '3.0.3'
 gem 'thinking-sphinx'
 gem 'resque', require: "resque/server"
+gem 'resque_mailer'
 
 group :development, :test do
   gem 'rspec-rails'

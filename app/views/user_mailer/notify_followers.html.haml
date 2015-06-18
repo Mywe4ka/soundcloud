@@ -7,8 +7,7 @@
       = "#{I18n.t('views.user_mailer.hi')}!"
     %p
       = I18n.t('views.user_mailer.song_added', user: @user.name)
-      %br/
     %p
       = I18n.t 'views.user_mailer.click_link'
-      %br/
+    %p
       = link_to I18n.t('views.user_mailer.here'), comments_songs_path(:id => @song_id, :only_path => false, :host => "localhost", :port => 3000)

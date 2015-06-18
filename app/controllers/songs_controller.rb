@@ -11,7 +11,10 @@ class SongsController < ApplicationController
     @song = Song.create(params[:song])
     @song.user_id = current_user.id
     if @song.save
-      notify_follow(current_user, @song)
+      song_id = @song.id
+      user_ids = current_user.followed_users.map(&:id)
+      #followed_users should be changed to following
+      Resque.enqueue(NotifyMailer, user_ids, song_id)
       render :action => 'edit'
     else
       flash[:alert] = I18n.t 'controllers.songs.not_uploaded'
