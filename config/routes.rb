@@ -26,5 +26,6 @@ Sound::Application.routes.draw do
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
   root to: 'home#index'
+  mount Resque::Server, :at => "/resque"
 
 end

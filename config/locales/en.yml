@@ -40,6 +40,15 @@ en:
       new: "New playlist"
       edit: "Edit playlist"
       submit: "Submit"
+    user_mailer:
+      hi: "Hi"
+      start_following: "Hey! You start following new user on Soundcloud!"
+      newsletters: "Now you'll be getting letters about his new added songs."
+      stop_following: "You stop following the user on Soundcloud!"
+      song_added: "Wow, It seems like %{user} added new song!"
+      click_link: "Click the link below to look it immediately!"
+      great_day: "Have a great day!"
+      here: "Click here"
   controllers:
     users:
       updated: "You have successfully updated information!"

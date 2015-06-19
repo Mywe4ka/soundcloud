@@ -1,4 +1,5 @@
 class SongsController < ApplicationController
+  include MailSendingLogic
 
   before_filter :find_song, :only => [:edit, :update, :destroy, :comments]
 
@@ -10,6 +11,9 @@ class SongsController < ApplicationController
     @song = Song.create(params[:song])
     @song.user_id = current_user.id
     if @song.save
+      user_ids = current_user.followed_users.map(&:id)
+      #followed_users should be changed to following
+      Resque.enqueue(NotifyMailer, user_ids, @song.id)
       render :action => 'edit'
     else
       flash[:alert] = I18n.t 'controllers.songs.not_uploaded'
