@@ -11,6 +11,7 @@ gem 'will_paginate', '3.0.3'
 gem 'thinking-sphinx'
 gem 'resque', require: "resque/server"
 gem 'resque_mailer'
+gem 'aasm'
 
 group :development, :test do
   gem 'rspec-rails'
