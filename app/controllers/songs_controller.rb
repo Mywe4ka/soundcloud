@@ -14,6 +14,7 @@ class SongsController < ApplicationController
       song_id = @song.id
       user_ids = current_user.followed_users.map(&:id)
       #followed_users should be changed to following
+      binding.pry
       Resque.enqueue(NotifyMailer, user_ids, song_id)
       render :action => 'edit'
     else
