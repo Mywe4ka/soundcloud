@@ -65,7 +65,7 @@ RSpec.describe UserMailer, :type => :mailer do
     end
 
     it 'assigns @confirmation_url' do
-      expect(mail.body.encoded).to match("http://localhost:3000/songs/comments?id=#{song.id}")
+      expect(mail.body.raw_source).to match(/http:\/\/localhost:3000\/songs\/comments\?id=#{song.id}/)
     end
   end
 end
