@@ -34,18 +34,18 @@ class User < ActiveRecord::Base
       transitions :from => :guruman, :to => :meloman
     end
     event :green do
-      transitions :from => [:meloman, :guruman, :greenman], :to => :greenman
+      transitions :from => [:guruman, :greenman], :to => :greenman
     end
   end
 
-  def self.user_status(user)
-    quantity = user.followers.count
+  def user_status
+    quantity = followers.count
     if 20 <= quantity && quantity < 50
-      user.guru!
+      guru!
     elsif quantity >= 50
-      user.melo!
+      melo!
     else
-      user.green!
+      green!
     end
   end
 
