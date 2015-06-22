@@ -40,7 +40,7 @@ class User < ActiveRecord::Base
 
   def user_status
     quantity = followers.count
-    if 20 <= quantity && quantity < 50
+    if quantity.between?(20, 49)
       guru!
     elsif quantity >= 50
       melo!
