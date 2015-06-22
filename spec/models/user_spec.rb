@@ -16,6 +16,7 @@ describe User do
   it { should respond_to(:city) }
   it { should respond_to(:country) }
   it { should respond_to(:description) }
+  it { should respond_to(:aasm_state) }
   it { should respond_to(:oauth_token) }
   it { should respond_to(:oauth_expires_at) }
   it { should respond_to(:photo) }
@@ -26,6 +27,10 @@ describe User do
   it { should respond_to(:following?) }
   it { should respond_to(:follow!) }
   it { should respond_to(:unfollow!) }
+  it { should respond_to(:guru!) }
+  it { should respond_to(:melo!) }
+  it { should respond_to(:green!) }
+
 
   it { should have_many(:songs) }
   it { should have_many(:playlists) }
@@ -57,5 +62,31 @@ describe User do
       it { should_not be_following(other_user) }
       its(:followed_users) { should_not include(other_user) }
     end
+  end
+
+  describe 'AASM states' do
+      it 'should be an initial state' do
+        user.should be_greenman
+      end
+
+      it 'should change to :guruman on :guru' do
+        user.guru!
+        user.should be_guruman
+      end
+
+      it 'should change to :greenman on :green' do
+        user.green!
+        user.should be_greenman
+      end
+
+      it 'should change to :meloman on :melo' do
+        lambda {user.melo!}.should raise_error(AASM::InvalidTransition)
+      end
+
+      ['guru!', 'green!', 'melo!'].each do |action|
+        it "should raise an error for #{action}" do
+          lambda {@song.send(action)}.should raise_error(NoMethodError)
+        end
+      end
   end
 end

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include AASM
+
   attr_accessible :provider, :uid, :name, :first_name, :last_name, :oauth_token,
                   :oauth_expires_at, :city, :country, :description, :photo
 
@@ -19,6 +21,33 @@ class User < ActiveRecord::Base
 
   validates_attachment_content_type :photo,
     content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"]
+
+  aasm do
+    state :greenman, initial: true
+    state :guruman
+    state :meloman
+
+    event :guru do
+      transitions :from => :greenman, :to => :guruman
+    end
+    event :melo do
+      transitions :from => :guruman, :to => :meloman
+    end
+    event :green do
+      transitions :from => [:guruman, :greenman], :to => :greenman
+    end
+  end
+
+  def user_status
+    quantity = followers.count
+    if quantity.between?(20, 49)
+      guru!
+    elsif quantity >= 50
+      melo!
+    else
+      green!
+    end
+  end
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
