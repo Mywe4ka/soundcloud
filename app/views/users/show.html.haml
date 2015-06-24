@@ -4,7 +4,7 @@
       %br/
       = image_tag @user.photo.url(:thumb)
       %br/
-      %h2= @user.name
+      %h3= @user.name
 
       - if signed_in?
         = render 'follow_form'
