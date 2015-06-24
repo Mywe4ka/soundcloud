@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   before_filter :find_user
 
   def show
+    @playlists = Playlist.paginate(page: params[:page])
   end
 
   def edit

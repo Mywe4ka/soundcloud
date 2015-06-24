@@ -1,0 +1,22 @@
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  padding-left: 25px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.header_up {
+  padding-top: 9px;
+}
+
+
+.white_text {
+  colour: #fff
+}
+
