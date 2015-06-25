@@ -1,5 +1,8 @@
 ---
 en:
+  will_paginate:
+    previous_label: "&#8592;"
+    next_label: "&#8594;"
   views:
     layouts:
       signed_in: "Signed in as "
@@ -10,7 +13,7 @@ en:
     users:
       following: "Following"
       followers: "Followers"
-      edit_profile: "Edit profile"
+      edit: "Edit"
       follow: "Follow"
       unfollow: "Unfollow"
       view_profile: "View profile"
@@ -31,6 +34,7 @@ en:
       genre: "Genre"
       album: "Album"
       track_nr: "Track number"
+      comments: "Comments"
       play: "Play"
     playlists:
       name: "Name"
@@ -40,6 +44,7 @@ en:
       new: "New playlist"
       edit: "Edit playlist"
       submit: "Submit"
+      add: "Add"
     user_mailer:
       hi: "Hi"
       start_following: "Hey! You start following new user on Soundcloud!"

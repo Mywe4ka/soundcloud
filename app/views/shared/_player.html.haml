@@ -1,2 +1,3 @@
 .audio-player
   %audio#audio-player{:controls => "controls", :src => asset_path("#{song_for_player.mfile.url}"), :type => "audio/mpeg"}
+  %h5= "#{song_for_player.title} - #{song_for_player.artist}"

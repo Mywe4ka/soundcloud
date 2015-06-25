@@ -1,5 +1,8 @@
 ---
 ua:
+  will_paginate:
+    previous_label: "&#8592;"
+    next_label: "&#8594;"
   views:
     layouts:
       signed_in: "Привіт, "
@@ -10,7 +13,7 @@ ua:
     users:
       following: "Підписки"
       followers: "Підписники"
-      edit_profile: "Редагувати профіль"
+      edit: "Редагувати"
       follow: "Підписатися"
       unfollow: "Відписатися"
       view_profile: "Переглянути профіль"
@@ -32,6 +35,7 @@ ua:
       album: "Альбом"
       track_nr: "Номер пісні"
       play: "Грати"
+      comments: "Коментарі"
     playlists:
       name: "Назва"
       desciption: "Опис"
@@ -40,6 +44,7 @@ ua:
       new: "Новий плейлист"
       edit: "Редагувати плейлист"
       submit: "Застосувати"
+      add: "Додати"
     user_mailer:
       hi: "Привіт"
       start_following: "Вітаємо! Ви підписались на користувача на Soundcloud!"

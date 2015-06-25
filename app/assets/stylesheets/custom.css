@@ -15,8 +15,19 @@
   padding-top: 9px;
 }
 
-
 .white_text {
   colour: #fff
 }
 
+.container-grey {
+  colour: #e5e5e5
+}
+
+#right {
+  position: absolute;
+  right:0px
+}
+
+body, html, .container-fluid {
+  height: 100%;
+}

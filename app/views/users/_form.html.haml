@@ -29,3 +29,10 @@
   = f.text_area :description
   %br/
   = f.submit I18n.t 'views.users.update'
+
+:javascript
+  $('#user_photo').fileinput({
+    showCaption: false,
+    maxFilesNum: 1,
+    allowedFileExtensions: ["jpg", "jpeg", "gif", "png"]
+  });

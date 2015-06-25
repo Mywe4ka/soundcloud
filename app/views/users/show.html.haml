@@ -1,19 +1,19 @@
-.container
+.container{:style => "background-color: #e9e9e9; height: 100%"}
   .row
     .col-xs-9.col-md-6
       %br/
       = image_tag @user.photo.url(:thumb)
       %br/
       %h3= @user.name
-
       - if signed_in?
         = render 'follow_form'
         %br/
         = render 'stats'
         %br/
-
       - if @user == current_user
-        = link_to I18n.t('views.users.edit_profile'), edit_user_path(@user)
+        %a.btn.btn-default{:href => edit_user_path(@user)}
+          %span.glyphicon.glyphicon-pencil>
+          = I18n.t('views.users.edit')
         %br/
         %br/
         = render 'songs/upload'
@@ -21,11 +21,9 @@
       %br/
       - @playlists.each do |playlist|
         - if current_user?(playlist.user)
-          %tr
-            %td= link_to playlist.name, playlist_path(playlist)
-            %td= link_to I18n.t('global.edit'), edit_playlist_path(playlist)
-            %td= link_to I18n.t('global.delete'), playlist_path(playlist), method: :delete, data: { confirm: I18n.t('global.are_sure') }
-            %td= link_to "<button>Add</button>".html_safe, add_song_playlists_path(:id => playlist, :song_id => @song)
+          = link_to playlist.name, playlist_path(playlist)
+          - playlist.songs.each_with_index do |song, i|
+            = render 'shared/player', :song_for_player => song
 
 
 
