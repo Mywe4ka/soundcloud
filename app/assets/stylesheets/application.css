@@ -10,6 +10,6 @@
  *
  *= require_self
  *= require bootstrap.min
- *= require fileinput.min.css
+ *= require fileinput.min
  *= require_tree .
  */

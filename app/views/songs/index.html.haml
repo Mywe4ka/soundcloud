@@ -13,9 +13,6 @@
             %td
               %a.btn.btn-default{:href => playlists_path(:song_id => song)}
                 %span.glyphicon.glyphicon-plus
-            / %td
-            /   %a.btn.btn-default{:href => song_path(song), method: :delete, data: { confirm: I18n.t('global.are_sure') }}
-            /     %span.glyphicon.glyphicon-trash
             %td
               %a.btn.btn-default{:href => comments_songs_path(:id => song)}
                 %span.glyphicon.glyphicon-check

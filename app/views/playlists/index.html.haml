@@ -26,7 +26,7 @@
                   %span.glyphicon.glyphicon-trash
                   = I18n.t 'global.delete'
               %td
-                %a.btn.btn-default{:href => songs_path}
+                %a.btn.btn-default{:href => add_song_playlists_path(:id => playlist, :song_id => @song)}
                   %span.glyphicon.glyphicon-plus
                   = I18n.t 'views.playlists.add'
     = will_paginate @playlists

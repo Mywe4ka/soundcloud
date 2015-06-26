@@ -25,9 +25,9 @@
           %td
             %h5= "#{song.title} - #{song.artist}"
           %td
-          / %td
-          /   %a.btn.btn-default{:href => song_path(song), method: :delete, data: { confirm: I18n.t('global.are_sure') }}
-          /     %span.glyphicon.glyphicon-trash
+          %td
+            %a.btn.btn-default{:href => song_path(song), method: :delete, data: { confirm: I18n.t('global.are_sure') }}
+              %span.glyphicon.glyphicon-trash
           %td
             %a.btn.btn-default{:href => comments_songs_path(:id => song)}
               %span.glyphicon.glyphicon-check

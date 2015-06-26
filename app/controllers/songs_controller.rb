@@ -13,6 +13,7 @@ class SongsController < ApplicationController
     if @song.save
       user_ids = current_user.followers.map(&:id)
       Resque.enqueue(NotifyMailer, user_ids, @song.id)
+      Resque.enqueue(Reindexing)
       render :action => 'edit'
     else
       flash[:alert] = I18n.t 'controllers.songs.not_uploaded'
