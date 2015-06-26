@@ -1,9 +1,14 @@
 class UsersController < ApplicationController
 
-  before_filter :find_user
+  before_filter :find_user, except: [:index]
+
+  def index
+    @users = User.paginate(page: params[:page])
+  end
 
   def show
     @playlists = Playlist.paginate(page: params[:page])
+    @users = User.all
   end
 
   def edit

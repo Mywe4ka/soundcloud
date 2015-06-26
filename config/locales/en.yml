@@ -24,9 +24,10 @@ en:
       country: "Country"
       description: "Description"
       update: "Update"
+      list: "List users"
     songs:
       upload_new_MP3: "Upload new MP3"
-      list: "Songs' list"
+      list: "List songs"
       upload: "Upload"
       title: "Title"
       artist: "Artist"
@@ -54,6 +55,7 @@ en:
       click_link: "Click the link below to look it immediately!"
       great_day: "Have a great day!"
       here: "Click here"
+      best_regards: "Best regards, MusicLoud"
   controllers:
     users:
       updated: "You have successfully updated information!"

@@ -11,8 +11,7 @@ class SongsController < ApplicationController
     @song = Song.create(params[:song])
     @song.user_id = current_user.id
     if @song.save
-      user_ids = current_user.followed_users.map(&:id)
-      #followed_users should be changed to followers
+      user_ids = current_user.followers.map(&:id)
       Resque.enqueue(NotifyMailer, user_ids, @song.id)
       render :action => 'edit'
     else

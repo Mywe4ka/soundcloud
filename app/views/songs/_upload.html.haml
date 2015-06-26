@@ -1,10 +1,3 @@
 = form_for Song.new, url: upload_songs_path do |f|
   = f.file_field "mfile"
   %br/
-
-:javascript
-  $('#song_mfile').fileinput({
-    showCaption: false,
-    maxFilesNum: 1,
-    allowedFileExtensions: ["mpeg", "mp3"]
-  });

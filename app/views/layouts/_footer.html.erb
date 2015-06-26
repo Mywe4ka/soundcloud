@@ -1,6 +1,26 @@
-<nav class="navbar navbar-inverse" style ='margin-top: 10px;'>
-  <div class="row">
-
-  </div>
-</nav>
-
+<div class="container marketing">
+    <div class="row">
+      <div class="col-xs-6 col-sm-4">
+        <%= image_tag("logo5.jpg", height: "140", width: "140", class: "img-circle") %>
+        <h2>Songs</h2>
+        <p>Upload your favorite music and enjoy it! Don't forget to share it with friends!</p>
+        <p><a class="btn btn-default" href="<%= songs_path %>" role="button">List songs &raquo;</a></p>
+      </div>
+      <div class="col-xs-6 col-sm-4">
+        <%= image_tag("logo1.jpg", height: "140", width: "140", class: "img-circle") %>
+        <h2>Playlists</h2>
+        <p>Simply, the list of your adorable music! Don't forget to create one!</p>
+        <p><a class="btn btn-default" href="<%= playlists_path %>"  role="button">List playlists &raquo;</a></p>
+      </div>
+      <div class="col-xs-6 col-sm-4">
+        <%= image_tag("logo3.jpg", height: "140", width: "140", class: "img-circle") %>
+        <h2>Meloman</h2>
+        <p>Person who really understands music life! Don't forget to find one and follow!</p>
+        <p><a class="btn btn-default" href="<%= users_path %>"  role="button">List users &raquo;</a></p>
+      </div>
+    </div>
+    <footer>
+      <p class="pull-right"></p>
+      <p>&copy; 2015 MusicLoud</p>
+    </footer>
+</div>

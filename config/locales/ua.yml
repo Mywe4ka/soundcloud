@@ -24,6 +24,7 @@ ua:
       country: "Країна"
       description: "Опис"
       update: "Оновити"
+      list: "Список користувачів"
     songs:
       upload_new_MP3: "Завантажити нову пісню"
       list: "Список пісень"
@@ -54,6 +55,7 @@ ua:
       click_link: "Перейдіть по ссилці нижче, що скоріше глянути!"
       great_day: "Гарного дня і прекрасного настрою!"
       here: "Тисніть тут"
+      best_regards: "Ваш улюблений, MusicLoud"
   controllers:
     users:
       updated: "Ви успішно оновили інформацію!"

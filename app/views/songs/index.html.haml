@@ -1,23 +1,25 @@
 .container{:style => "background-color: #e9e9e9; min-height: 80%;"}
-  %h2= I18n.t 'views.songs.list'
-  = will_paginate @songs, :style => 'color:black'
-  %table{:cellspacing => '0', :width => '100%'}
-    %thead
-    %tbody
-      - @songs.each_with_index do |song, i|
-        %tr
-          %td= image_tag("original1.jpg")
-          %td= render 'shared/player', :song_for_player => song
-          %td
-            %a.btn.btn-default{:href => playlists_path(:song_id => song)}
-              %span.glyphicon.glyphicon-plus
-          / %td
-          /   %a.btn.btn-default{:href => song_path(song), method: :delete, data: { confirm: I18n.t('global.are_sure') }}
-          /     %span.glyphicon.glyphicon-trash
-          %td
-            %a.btn.btn-default{:href => comments_songs_path(:id => song)}
-              %span.glyphicon.glyphicon-check
-              = I18n.t 'views.songs.comments'
-          %td
-            %br/
+  .center_block
+    %h2= I18n.t 'views.songs.list'
+    = will_paginate @songs, :style => 'color:black'
+    %table{:cellspacing => '0', :width => '100%'}
+      %thead
+      %tbody
+        - @songs.each_with_index do |song, i|
+          %tr
+            %td
+              = image_tag("logo5.jpg", height: "80", width: "80", class: "img-circle")
+            %td= render 'shared/player', :song_for_player => song
+            %td
+              %a.btn.btn-default{:href => playlists_path(:song_id => song)}
+                %span.glyphicon.glyphicon-plus
+            / %td
+            /   %a.btn.btn-default{:href => song_path(song), method: :delete, data: { confirm: I18n.t('global.are_sure') }}
+            /     %span.glyphicon.glyphicon-trash
+            %td
+              %a.btn.btn-default{:href => comments_songs_path(:id => song)}
+                %span.glyphicon.glyphicon-check
+                = I18n.t 'views.songs.comments'
+            %td
+              %br/
   = will_paginate @songs, :style => 'color:black'
