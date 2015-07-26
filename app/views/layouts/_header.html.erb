@@ -1,0 +1,17 @@
+<nav class="navbar navbar-inverse">
+  <div class="row">
+    <div class="col-xs-6 col-md-4"><div class="left-side"><%= link_to "musicloud", root_path, id: "logo" %></div></div>
+    <div class="col-xs-6 col-sm-4 header_up ">
+      <% if current_user %>
+        <%= render 'shared/search', :path => songs_path %></div>
+      <div class="col-xs-6 col-sm-4 header_up">
+        <div style="color:#b7b7b7"><%= I18n.t("views.layouts.signed_in") %><strong><%= link_to current_user.name, current_user %> | </strong>
+        <%= link_to I18n.t("views.layouts.sign_out"), signout_path, id: "sign_out" %></div>
+      <% else %>
+        <div id="right">
+          <%= link_to I18n.t("views.layouts.sign_in") , "/auth/facebook", id: "sign_in" %></div></div>
+      <% end %>
+    </div>
+</nav>
+
+

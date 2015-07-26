@@ -1,5 +1,8 @@
 ---
 ua:
+  will_paginate:
+    previous_label: "&#8592;"
+    next_label: "&#8594;"
   views:
     layouts:
       signed_in: "Привіт, "
@@ -10,7 +13,7 @@ ua:
     users:
       following: "Підписки"
       followers: "Підписники"
-      edit_profile: "Редагувати профіль"
+      edit: "Редагувати"
       follow: "Підписатися"
       unfollow: "Відписатися"
       view_profile: "Переглянути профіль"
@@ -21,6 +24,7 @@ ua:
       country: "Країна"
       description: "Опис"
       update: "Оновити"
+      list: "Список користувачів"
     songs:
       upload_new_MP3: "Завантажити нову пісню"
       list: "Список пісень"
@@ -32,6 +36,7 @@ ua:
       album: "Альбом"
       track_nr: "Номер пісні"
       play: "Грати"
+      comments: "Коментарі"
     playlists:
       name: "Назва"
       desciption: "Опис"
@@ -40,6 +45,7 @@ ua:
       new: "Новий плейлист"
       edit: "Редагувати плейлист"
       submit: "Застосувати"
+      add: "Додати"
     user_mailer:
       hi: "Привіт"
       start_following: "Вітаємо! Ви підписались на користувача на Soundcloud!"
@@ -49,6 +55,7 @@ ua:
       click_link: "Перейдіть по ссилці нижче, що скоріше глянути!"
       great_day: "Гарного дня і прекрасного настрою!"
       here: "Тисніть тут"
+      best_regards: "Ваш улюблений, MusicLoud"
   controllers:
     users:
       updated: "Ви успішно оновили інформацію!"

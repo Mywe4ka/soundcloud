@@ -1,5 +1,8 @@
 ---
 en:
+  will_paginate:
+    previous_label: "&#8592;"
+    next_label: "&#8594;"
   views:
     layouts:
       signed_in: "Signed in as "
@@ -10,7 +13,7 @@ en:
     users:
       following: "Following"
       followers: "Followers"
-      edit_profile: "Edit profile"
+      edit: "Edit"
       follow: "Follow"
       unfollow: "Unfollow"
       view_profile: "View profile"
@@ -21,9 +24,10 @@ en:
       country: "Country"
       description: "Description"
       update: "Update"
+      list: "List users"
     songs:
       upload_new_MP3: "Upload new MP3"
-      list: "Songs' list"
+      list: "List songs"
       upload: "Upload"
       title: "Title"
       artist: "Artist"
@@ -31,6 +35,7 @@ en:
       genre: "Genre"
       album: "Album"
       track_nr: "Track number"
+      comments: "Comments"
       play: "Play"
     playlists:
       name: "Name"
@@ -40,6 +45,7 @@ en:
       new: "New playlist"
       edit: "Edit playlist"
       submit: "Submit"
+      add: "Add"
     user_mailer:
       hi: "Hi"
       start_following: "Hey! You start following new user on Soundcloud!"
@@ -49,6 +55,7 @@ en:
       click_link: "Click the link below to look it immediately!"
       great_day: "Have a great day!"
       here: "Click here"
+      best_regards: "Best regards, MusicLoud"
   controllers:
     users:
       updated: "You have successfully updated information!"

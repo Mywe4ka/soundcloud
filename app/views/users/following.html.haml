@@ -1,3 +1,5 @@
-= render 'users_folowers'
-%h3= I18n.t 'views.users.following'
-= render 'show_follow'
+.container{:style => "background-color: #e9e9e9; min-height: 80%;"}
+  .center_block
+    = render 'users_folowers'
+    %h3= I18n.t 'views.users.following'
+    = render 'show_follow'

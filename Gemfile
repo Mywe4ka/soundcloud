@@ -8,10 +8,12 @@ gem 'haml'
 gem 'id3tag'
 gem 'rails-i18n'
 gem 'will_paginate', '3.0.3'
+gem 'bootstrap-will_paginate'
 gem 'thinking-sphinx'
 gem 'resque', require: "resque/server"
 gem 'resque_mailer'
 gem 'aasm'
+
 
 group :development, :test do
   gem 'rspec-rails'

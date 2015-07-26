@@ -13,12 +13,10 @@ class UserMailer < ActionMailer::Base
          subject: "Stopping following the user")
   end
 
-  def notify_followers(*user_ids, song_id)
+  def notify_followers(user_id, song_id)
     @song = Song.find(song_id)
-    user_ids.each do |user_id|
-      @user = User.find(user_id)
-      mail(to: @user.email,
-           subject: "Following user added new song")
-    end
+    @user = User.find(user_id)
+    mail(to: @user.email,
+          subject: "Following user added new song")
   end
 end
