@@ -8,14 +8,13 @@
 #
 # And be sure to use new-style password hashing:
 #   http://dev.mysql.com/doc/refman/5.0/en/old-client.html
-development:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: DeanIo_development
-  pool: 5
-  host: localhost
-# socket: /tmp/mysql.sock
+development: &development
+ adapter: mysql2
+ database: soundcloud_development
+ username: root
+ host: 127.0.0.1
+ password:
+ socket: /tmp/mysql.sock
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -24,7 +23,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: DeanIo_test
+  database: soundcloud_test
   pool: 5
   host: localhost
 # socket: /tmp/mysql.sock
@@ -33,7 +32,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: DeanIo_production
+  database: soundcloud_production
   pool: 5
   host: localhost
   username: root

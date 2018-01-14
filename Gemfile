@@ -1,13 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.21'
+gem 'rails', '4.2.8'
 gem 'omniauth-facebook'
 gem 'mysql2'
-gem 'paperclip', '4.2.2'
+gem 'paperclip'
 gem 'haml'
 gem 'id3tag'
 gem 'rails-i18n'
-gem 'will_paginate', '3.0.3'
+gem 'will_paginate'
 gem 'bootstrap-will_paginate'
 gem 'thinking-sphinx'
 gem 'resque', require: "resque/server"
@@ -17,7 +17,7 @@ gem 'aasm'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails', '4.1.0'
+  gem 'factory_girl_rails'
   gem 'pry'
 end
 
@@ -27,15 +27,15 @@ group :test do
 end
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
 end
 
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# gem 'bcrypt-ruby'
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

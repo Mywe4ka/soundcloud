@@ -1,12 +1,16 @@
 class CreateSongs < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :songs do |t|
-      t.belongs_to :user, index:true
+      t.references :user, foreign_key: true, type: :integer
       t.string :title
       t.string :artist
       t.datetime :year
 
-      t.timestamps
+      t.timestamps null: false
     end
+  end
+
+  def self.down
+  	drop_table :songs
   end
 end

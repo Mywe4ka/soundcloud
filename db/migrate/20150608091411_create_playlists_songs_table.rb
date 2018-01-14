@@ -1,8 +1,12 @@
 class CreatePlaylistsSongsTable < ActiveRecord::Migration
-  def change
+  def self.up
     create_table :playlists_songs, id: false do |t|
-      t.belongs_to :playlist, index: true
-      t.belongs_to :song, index: true
+      t.references :playlist, index: true
+      t.references :song, index: true
     end
+  end
+
+  def self.down
+    drop_table :playlists_songs
   end
 end

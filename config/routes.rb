@@ -21,9 +21,9 @@ Sound::Application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
 
-  match 'auth/:provider/callback', to: 'sessions#create'
-  match 'auth/failure', to: redirect('/')
-  match 'signout', to: 'sessions#destroy', as: 'signout'
+  get 'auth/:provider/callback', to: 'sessions#create'
+  get 'auth/failure', to: redirect('/')
+  get 'signout', to: 'sessions#destroy', as: 'signout'
 
   root to: 'home#index'
   mount Resque::Server, :at => "/resque"

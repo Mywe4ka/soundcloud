@@ -3,7 +3,7 @@ class Song < ActiveRecord::Base
 
   after_commit :set_song_attr_from_id3tag, :on => :create
 
-  attr_accessible :artist, :title, :year, :mfile, :album, :track_nr, :genre, :user_id
+  # attr_accessible :artist, :title, :year, :mfile, :album, :track_nr, :genre, :user_id
 
   belongs_to :user
   has_and_belongs_to_many :playlists

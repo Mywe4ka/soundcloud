@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
   include AASM
 
-  attr_accessible :provider, :uid, :name, :first_name, :last_name, :oauth_token,
-                  :oauth_expires_at, :city, :country, :description, :photo
+  # attr_accessible :provider, :uid, :name, :first_name, :last_name, :oauth_token,
+                  # :oauth_expires_at, :city, :country, :description, :photo
 
   has_many :songs
   has_many :playlists, dependent: :destroy
@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
   end
 
   def self.from_omniauth(auth)
-    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email

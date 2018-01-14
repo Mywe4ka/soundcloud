@@ -8,7 +8,7 @@ class SongsController < ApplicationController
   end
 
   def upload
-    @song = Song.create(params[:song])
+    @song = Song.create(song_params)
     @song.user_id = current_user.id
     if @song.save
       user_ids = current_user.followers.map(&:id)
@@ -24,7 +24,7 @@ class SongsController < ApplicationController
   end
 
   def update
-    @song.update_attributes!(params[:song]) if @song.changed?
+    @song.update_attributes!(song_params) if @song.changed?
     flash[:notice] = I18n.t 'controllers.songs.uploaded'
     redirect_to(:controller => 'songs', :action => 'index')
   rescue
@@ -50,4 +50,9 @@ class SongsController < ApplicationController
   def find_song
     @song = Song.find(params[:id])
   end
+
+  def song_params
+    params.require(:song).permit(:title, :artist, :year, :mfile_file_name, :mfile_content_type, :mfile_file_size, :mfile_updated_at, :album, :track_nr, :genre)
+  end
 end
+

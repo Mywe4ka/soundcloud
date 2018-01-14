@@ -13,7 +13,7 @@ class PlaylistsController < ApplicationController
   end
 
   def create
-    @playlist = Playlist.new(params[:playlist])
+    @playlist = Playlist.new(playlist_params)
     @playlist.user = current_user
     if @playlist.save
       flash[:notice] = I18n.t 'controllers.playlists.created'
@@ -31,7 +31,7 @@ class PlaylistsController < ApplicationController
   end
 
   def update
-    if @playlist.update_attributes(params[:playlist])
+    if @playlist.update_attributes(playlist_params)
       flash[:notice] = I18n.t 'controllers.playlists.updated'
       redirect_to playlist_path
     else
@@ -69,5 +69,9 @@ private
 
   def find_song
     @song = Song.find(params[:song_id])
+  end
+
+  def playlist_params
+    params.require(:playlist).permit(:user_id, :name, :description)
   end
 end
